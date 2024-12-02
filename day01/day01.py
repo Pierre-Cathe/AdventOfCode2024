@@ -6,7 +6,6 @@ FILENAME = './input'
 
 
 def parse_data(filename):
-    patterns = []
     with open(filename) as data:
         left_list, right_list = [], []
         for raw_line in data:
