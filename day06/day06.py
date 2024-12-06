@@ -86,8 +86,8 @@ def run():
     print(f"Walked squares : {len(walked_squares)}")
 
     looping_obstructions_found = 0
-    for x in tqdm(range(len(lab_map))):
-        for y in range(len(lab_map[x])):
+    for x in tqdm(range(len(lab_map)), desc="X"):
+        for y in tqdm(range(len(lab_map[x])), desc="Y", leave=False):
             if lab_map[x][y] == LAB_SPACE:
                 lab_map[x] = lab_map[x][:y] + OBSTRUCTION + lab_map[x][y + 1:]
                 _, has_looped = do_guard_walk(lab_map)
