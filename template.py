@@ -1,5 +1,4 @@
-from tqdm import tqdm
-import re
+from tqdm import tqdm, trange
 
 # FILENAME = './input'
 FILENAME = './example'
@@ -9,7 +8,8 @@ def parse_data(filename):
     data = []
     with open(filename) as lines:
         for raw_line in lines:
-            data.append(raw_line.rstrip())
+            line = raw_line.rstrip()
+            data.append(line)
     return data
 
 
